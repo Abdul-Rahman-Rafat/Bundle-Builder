@@ -1,0 +1,248 @@
+[
+  {
+    "id": 1,
+    "category": "camera",
+    "name": "Wyze Cam v4",
+    "description": "The clearest Wyze Cam ever made.",
+    "image": "/images/cam-v4.webp",
+
+    "badge": {
+      "type": "discount",
+      "value": 22
+    },
+
+    "price": 27.98,
+    "compareAtPrice": 35.98,
+
+    "variants": [
+      {
+        "id": "white",
+        "colorName": "White",
+        "image": "/images/colors/white.webp"
+      },
+      {
+        "id": "grey",
+        "colorName": "Grey",
+        "image": "/images/colors/grey.webp"
+      },
+      {
+        "id": "black",
+        "colorName": "Black",
+        "image": "/images/colors/black.webp"
+      }
+    ],
+
+    "isRequired": false
+  },
+
+  {
+    "id": 2,
+    "category": "camera",
+    "name": "Wyze Cam Pan v3",
+    "description": "360° pan and 180° tilt security camera.",
+    "image": "/images/cam-pan-v3.webp",
+
+    "badge": {
+      "type": "discount",
+      "value": 12
+    },
+
+    "price": 34.98,
+    "compareAtPrice": 39.98,
+
+    "variants": [
+      {
+        "id": "white",
+        "colorName": "White",
+        "image": "/images/colors/white.webp"
+      },
+      {
+        "id": "black",
+        "colorName": "Black",
+        "image": "/images/colors/black.webp"
+      }
+    ],
+
+    "isRequired": false
+  },
+
+  {
+    "id": 3,
+    "category": "camera",
+    "name": "Wyze Cam Floodlight v2",
+    "description": "2K floodlight camera with a 160° wide-angle view for your garage.",
+    "image": "/images/cam-floodlight-v2.webp",
+
+    "badge": {
+      "type": "discount",
+      "value": 22
+    },
+
+    "price": 69.98,
+    "compareAtPrice": 89.98,
+
+    "variants": [
+      {
+        "id": "white",
+        "colorName": "White",
+        "image": "/images/colors/white.webp"
+      },
+      {
+        "id": "black",
+        "colorName": "Black",
+        "image": "/images/colors/black.webp"
+      }
+    ],
+
+    "isRequired": false
+  },
+
+  {
+    "id": 4,
+    "category": "camera",
+    "name": "Wyze Duo Cam Doorbell",
+    "description": "Two cameras. Two views. Double the porch protection.",
+    "image": "/images/duo-cam-doorbell.webp",
+
+    "badge": null,
+
+    "price": 69.98,
+    "compareAtPrice": null,
+
+    "variants": [],
+
+    "isRequired": false
+  },
+
+  {
+    "id": 5,
+    "category": "camera",
+    "name": "Wyze Battery Cam Pro",
+    "description": "Protect anywhere. See everything in 2.5K HDR. No power outlet or electrician needed.",
+    "image": "/images/battery-cam-pro.webp",
+
+    "badge": null,
+
+    "price": 89.98,
+    "compareAtPrice": null,
+
+    "variants": [
+      {
+        "id": "white",
+        "colorName": "White",
+        "image": "/images/colors/white.webp"
+      },
+      {
+        "id": "black",
+        "colorName": "Black",
+        "image": "/images/colors/black.webp"
+      }
+    ],
+
+    "isRequired": false
+  },
+  {
+    "id": 6,
+    "category": "sensor",
+    "name": "Wyze Sense Motion Sensor",
+    "description": "Detects movement inside your home.",
+    "image": "/images/motion-sensor.webp",
+
+    "badge": null,
+
+    "price": 59.98,
+    "compareAtPrice": null,
+
+    "variants": [],
+
+    "isRequired": false
+  },
+
+  {
+    "id": 7,
+    "category": "sensor",
+    "name": "Wyze Sense Hub",
+
+    "description": "Required to connect Wyze Sense devices.",
+
+    "image": "/images/sense-hub.webp",
+
+    "badge": null,
+
+    "price": 0,
+    "compareAtPrice": 29.92,
+
+    "variants": [],
+
+    "isRequired": true
+  },
+
+  {
+    "id": 8,
+
+    "category": "accessory",
+
+    "name": "Wyze MicroSD Card (256GB)",
+
+    "description": "Wyze MicroSD Card (256GB) storage card.",
+
+    "image": "/images/microsd-256.webp",
+
+    "badge": null,
+
+    "price": 41.96,
+
+    "compareAtPrice": null,
+
+    "variants": [],
+
+    "isRequired": false
+  },
+
+  {
+    "id": 9,
+
+    "category": "plan",
+
+    "name": "Cam Unlimited",
+
+    "description": "Cam unlimited plan.",
+
+    "image": "/images/cam-unlimited.webp",
+
+    "badge": {
+      "type": "discount",
+      "value": 23
+    },
+
+    "price": 9.99,
+
+    "compareAtPrice": 12.99,
+
+    "variants": [],
+
+    "isRequired": false
+  },
+
+  {
+    "id": 10,
+
+    "category": "shipping",
+
+    "name": "Fast Shipping",
+
+    "description": "Fast shipping.",
+
+    "image": "/images/shipping.webp",
+
+    "badge": null,
+
+    "price": 0,
+
+    "compareAtPrice": 5.99,
+
+    "variants": [],
+
+    "isRequired": true
+  }
+]
