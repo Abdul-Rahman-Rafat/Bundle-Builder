@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import StepsJsonData from "../data/steps.json";
 
-let StepsContext = createContext();
+export const StepsContext = createContext();
 
 export default function StepsProvider({ children }) {
   let [steps, setSteps] = useState(StepsJsonData);
