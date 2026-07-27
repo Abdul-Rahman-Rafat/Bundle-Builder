@@ -4,13 +4,17 @@ import Quantity from "./Quantity";
 
 const ProdcutCard = () => {
   return (
-    <div className="w-[360px] flex justify-between  bg-white  rounded-2xl p-1.5 cursor-pointer  border-2  border-white transition-all duration-300 ease-out  hover:border-[#4E2FD2]">
+    <div
+      className="max-w-[360px] min-w-[220px] flex justify-between  bg-white  rounded-2xl p-1.5 cursor-pointer  border-2  border-white transition-all duration-300 ease-out  hover:border-[#4E2FD2]
+    max-[1440px]:flex-col max-[1440px]:flex-1 max-[1440px]:flex-wrap"
+    >
       <div className="relative p-1.5 rounded-2xl">
         <span className="w-20 absolute  top-0 rounded-2xl text-xs text-white bg-[#4E2FD2]  text-center py-1 ">
           {" "}
           Save 22%
         </span>
         <img
+          className=" m-auto "
           src="/public/images/Wyze_Cam v4/Wyze_Cam_V4_01.0001.png.png"
           alt="Wyze Cam V4"
         />
@@ -25,7 +29,7 @@ const ProdcutCard = () => {
           </span>{" "}
         </p>
         <VariantSelector />
-        <div className="flex items-center justify-between ">
+        <div className="flex items-center justify-between  ">
           <Quantity />
           <div className=" flex flex-col items-end ">
             <span className="line-through text-[#D8392B]">$35.98 </span>

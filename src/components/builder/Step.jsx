@@ -9,7 +9,10 @@ const Step = () => {
     setOpen((open) => setOpen(!open));
   }
   return (
-    <div onClick={accordionHandle} className="flex flex-col gap-4 ">
+    <div
+      onClick={accordionHandle}
+      className="flex flex-col gap-4 cursor-pointer"
+    >
       <StepHeader />
       {/* product cards */}
       <div className=" flex flex-wrap gap-4 justify-center  ">
