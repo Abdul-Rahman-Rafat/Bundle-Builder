@@ -1,8 +1,11 @@
 import React from "react";
 
-const StepHeader = ({ step }) => {
+const StepHeader = ({ step, open, setOpen }) => {
+  function accordionHandle() {
+    setOpen((prev) => !prev);
+  }
   return (
-    <div>
+    <div onClick={accordionHandle}>
       {/* pass the id of step here */}
       <p className="text-[#484848] border-b border-b-gray-400 max-[690px]:text-sm">
         Step {step.id} OF 4
