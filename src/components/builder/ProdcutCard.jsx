@@ -39,7 +39,9 @@ const ProdcutCard = ({ product }) => {
       </div>
 
       <div className="flex flex-col gap-1">
-        <h2>{product.name}</h2>
+        <h2>
+          {product.name} {product.isRequired ? "(Required)" : ""}
+        </h2>
         <p className="text-xs text-gray-400">
           {product.description} <br />{" "}
           <span className="text-blue-700 cursor-pointer underline">
@@ -61,6 +63,7 @@ const ProdcutCard = ({ product }) => {
             quantity={quantity}
             onInc={() => increment(product.id, activeVariantId)}
             onDec={() => decrement(product.id, activeVariantId)}
+            disabled={product.isRequired}
           />
           <div className=" flex flex-col items-end ">
             {product.compareAtPrice === null ? (

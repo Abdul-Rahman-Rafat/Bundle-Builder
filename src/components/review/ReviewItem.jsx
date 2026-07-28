@@ -10,13 +10,20 @@ function ReviewItem({ item, onIncrement, onDecrement }) {
           src={item.variant?.image || item.product.image}
           alt="Wyze Cam v4"
         />
-        <p className="text-sm">{item.product.name}</p>
+        <p className="text-sm text-wrap">
+          {item.product.name} {item.product.isRequired ? "(Required)" : ""}
+        </p>
         {item.variant ? (
           <p className="text-gray-500 text-xs">{item.variant.colorName}</p>
         ) : null}
       </div>
       <div className="flex items-center gap-3.5">
-        <Quantity quantity={item.qty} onInc={onIncrement} onDec={onDecrement} />
+        <Quantity
+          quantity={item.qty}
+          onInc={onIncrement}
+          onDec={onDecrement}
+          disabled={item.product.isRequired}
+        />
         <div className="flex flex-col items-end text-sm">
           {item.product.compareAtPrice ? (
             <span className="line-through text-[#6F7882]">
