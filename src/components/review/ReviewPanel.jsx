@@ -73,10 +73,7 @@ const ReviewPanel = () => {
         <div className="pb-3.5 border-b  border-b-gray-300"></div>
         <div className="pb-3.5  flex  justify-between items-center">
           <div className="flex items-center gap-2">
-            <img
-              src="/public/images/carbon_delivery.webp"
-              alt="Fast Shipping"
-            />
+            <img src="/images/carbon_delivery.webp" alt="Fast Shipping" />
             <p>Fast Shipping</p>
           </div>
           <div className="flex flex-col">

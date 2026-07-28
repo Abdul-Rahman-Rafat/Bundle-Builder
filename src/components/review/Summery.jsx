@@ -9,7 +9,7 @@ const Summery = ({ subtotal, originalTotal, savings }) => {
         <div className="flex items-center gap-6">
           <img
             className="w-[78px] max-[1440px]:w-[130px]"
-            src="/public/images/Satisfaction Badge-05 1.webp"
+            src="/images/Satisfaction Badge-05 1.webp"
             alt="Satisfaction Badge"
           />
           <div className="hidden max-[1440px]:block max-[430px]:hidden  ">
