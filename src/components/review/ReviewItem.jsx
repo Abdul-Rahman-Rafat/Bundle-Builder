@@ -23,8 +23,15 @@ function ReviewItem({ item, onIncrement, onDecrement }) {
               ${(item.product.compareAtPrice * item.qty).toFixed(2)}
             </span>
           ) : null}
-          <span className="text-[#4E2FD2]">
-            ${(item.product.price * item.qty).toFixed(2)}
+
+          <span className="text-[#4E2FD2]"></span>
+
+          <span>
+            {item.product.price === 0 ? (
+              <span className="text-[#4E2FD2]">FREE</span>
+            ) : (
+              <span>${(item.product.price * item.qty).toFixed(2)}</span>
+            )}
           </span>
         </div>
       </div>

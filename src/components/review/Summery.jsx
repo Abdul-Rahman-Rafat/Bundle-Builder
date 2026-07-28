@@ -35,8 +35,8 @@ const Summery = ({ subtotal, originalTotal, savings }) => {
       </div>
       <div className="flex flex-col">
         <p className="text-[#0AA288] text-sm">
-          Congrats! You’re saving ${originalTotal - subtotal} on your security
-          bundle!
+          Congrats! You’re saving ${(originalTotal - subtotal).toFixed(0)} on
+          your security bundle!
         </p>
         <CheckoutButton />
       </div>

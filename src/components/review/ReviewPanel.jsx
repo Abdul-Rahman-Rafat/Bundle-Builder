@@ -1,6 +1,6 @@
 import CategoryItems from "./CategoryItems";
 import ReviewHeader from "./ReviewHeader";
-import ReviewItem from "./ReviewItem";
+// import ReviewItem from "./ReviewItem";
 import Summery from "./Summery";
 import { CartContext } from "../../context/CartContext";
 import { ProductsContext } from "../../context/ProductsContext";
@@ -8,9 +8,9 @@ import { useContext, useMemo } from "react";
 
 const CATEGORY_LABELS = {
   camera: "Cameras",
-  plan: "Plan",
   sensor: "Sensors",
   accessory: "Accessories",
+  plan: "Plan",
 };
 
 const ReviewPanel = () => {
@@ -80,8 +80,18 @@ const ReviewPanel = () => {
             <p>Fast Shipping</p>
           </div>
           <div className="flex flex-col">
-            <span className="line-through">$5.99</span>
-            <span className="text-[#4E2FD2]">FREE</span>
+            <span className="line-through text-[#6F7882]">
+              ${products[9].compareAtPrice}
+            </span>
+            <span>
+              {products[9].price === 0 ? (
+                <span className="text-[#4E2FD2]">FREE</span>
+              ) : (
+                <span>
+                  $<span>{products[9].price}</span>
+                </span>
+              )}
+            </span>
           </div>
         </div>
       </div>
