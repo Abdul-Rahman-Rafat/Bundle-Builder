@@ -1,8 +1,8 @@
 import React from "react";
 
-const StepHeader = ({ step, open, setOpen }) => {
+const StepHeader = ({ step, setActiveStep }) => {
   function accordionHandle() {
-    setOpen((prev) => !prev);
+    setActiveStep((prev) => (prev === step.id ? null : step.id));
   }
   return (
     <div onClick={accordionHandle}>

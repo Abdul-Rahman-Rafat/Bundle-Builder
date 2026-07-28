@@ -4,18 +4,26 @@ import StepHeader from "./StepHeader";
 import ProdcutCard from "./ProdcutCard";
 import { ProductsContext } from "../../context/ProductsContext";
 
-const Step = ({ step }) => {
+const Step = ({ step, steps, activeStep, setActiveStep }) => {
   const { products } = useContext(ProductsContext);
-  const [open, setOpen] = useState(true);
+  const open = activeStep === step.id;
 
+  const currentIndex = steps.findIndex((s) => s.id === step.id);
+  const nextStep = steps[currentIndex + 1];
   // console.log(steps);
 
   return (
-    <div className="flex flex-col gap-4 cursor-pointer">
-      <StepHeader step={step} open={open} setOpen={setOpen} />
+    <div
+      className={`flex flex-col gap-4 cursor-pointer ${open === true ? "bg-[#EDF4FF]" : ""} px-8 pb-4 rounded-lg  `}
+    >
+      <StepHeader
+        step={step}
+        activeStep={activeStep}
+        setActiveStep={setActiveStep}
+      />
       {/* product cards */}
       <div
-        className={`flex flex-col gap-4 transition-all duration-500 ease-in-out overflow-hidden ${open ? "max-h-[1000px]" : "max-h-0"} `}
+        className={`flex flex-col gap-4 transition-all duration-500 ease-in-out overflow-hidden ${open ? "max-h-[1500px]" : "max-h-0"} `}
       >
         <div className=" flex flex-wrap gap-4 justify-center ">
           {/* pass products data */}
@@ -27,11 +35,16 @@ const Step = ({ step }) => {
               <ProdcutCard key={product.id} product={product} />
             ))}
         </div>
-        <div className="m-auto">
-          <button className="w-64  border border-[#4E2FD2] text-[#4E2FD2] rounded-lg p-1.5 px-6 text-lg  m-auto cursor-pointer transition-all duration-300 ease-in-out  hover:bg-blue-100">
-            Next: Choose your plan
-          </button>
-        </div>
+        {nextStep && (
+          <div className="m-auto">
+            <button
+              onClick={() => setActiveStep(nextStep.id)}
+              className="min-w-64 mb border border-[#4E2FD2] text-[#4E2FD2] rounded-lg p-1.5 px-6 text-lg m-auto cursor-pointer transition-all duration-300 ease-in-out hover:bg-blue-100"
+            >
+              Next: {nextStep.title}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
