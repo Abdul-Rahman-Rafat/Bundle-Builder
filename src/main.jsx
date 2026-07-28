@@ -3,12 +3,15 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import { ProductsProvider } from "./context/ProductsContext.jsx";
 import StepsProvider from "./context/StepsContext.jsx";
+import { CartProvider } from "./context/CartContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <StepsProvider>
       <ProductsProvider>
-        <App />
+        <CartProvider>
+          <App />
+        </CartProvider>
       </ProductsProvider>
     </StepsProvider>
   </StrictMode>,
