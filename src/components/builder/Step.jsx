@@ -1,16 +1,30 @@
 import React from "react";
-import { useState, useContext } from "react";
+import { useState, useContext, useMemo } from "react";
 import StepHeader from "./StepHeader";
 import ProdcutCard from "./ProdcutCard";
 import { ProductsContext } from "../../context/ProductsContext";
+import { CartContext } from "../../context/CartContext";
 
 const Step = ({ step, steps, activeStep, setActiveStep }) => {
   const { products } = useContext(ProductsContext);
+  const { cart } = useContext(CartContext);
+
   const open = activeStep === step.id;
 
   const currentIndex = steps.findIndex((s) => s.id === step.id);
   const nextStep = steps[currentIndex + 1];
   // console.log(steps);
+
+  const selectedCount = useMemo(() => {
+    return products.filter((product) => {
+      if (product.category !== step.category) return false;
+      const productCart = cart[product.id];
+      return (
+        productCart &&
+        Object.values(productCart.variants || {}).some((qty) => qty > 0)
+      );
+    }).length;
+  }, [cart, products, step.category]);
 
   return (
     <div
@@ -20,6 +34,8 @@ const Step = ({ step, steps, activeStep, setActiveStep }) => {
         step={step}
         activeStep={activeStep}
         setActiveStep={setActiveStep}
+        selectedCount={selectedCount}
+        open={open}
       />
       {/* product cards */}
       <div

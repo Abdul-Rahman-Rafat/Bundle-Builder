@@ -1,6 +1,6 @@
 import React from "react";
 
-const StepHeader = ({ step, setActiveStep }) => {
+const StepHeader = ({ step, setActiveStep, selectedCount, open }) => {
   function accordionHandle() {
     setActiveStep((prev) => (prev === step.id ? null : step.id));
   }
@@ -21,11 +21,11 @@ const StepHeader = ({ step, setActiveStep }) => {
 
         <div className=" w-24 flex items-center gap-1 text-[#4E2FD2] max-[690px]:text-sm  ">
           {/* count of selected items */}
-          <span className="">
+          <span>
             {" "}
-            <span>2</span> selected{" "}
+            <span className="text-sm">{selectedCount}</span> selected{" "}
           </span>
-          <span className=""> ⏷ </span>
+          <span className="text-sm">{open ? "⏶" : "⏷"}</span>{" "}
         </div>
       </div>
     </div>
