@@ -4,27 +4,27 @@
     "title": "Choose your cameras",
     "category": "camera",
     "products": [1, 2, 3, 4, 5],
-    "iconSrc": "/public/images/icons/camera icon.png"
+    "iconSrc": "/public/images/icons/camera icon.webp"
   },
   {
     "id": 2,
     "title": "Choose your plan",
     "category": "plan",
     "products": [9],
-    "iconSrc": "/public/images/icons/plan icon.png"
+    "iconSrc": "/public/images/icons/plan icon.webp"
   },
   {
     "id": 3,
     "title": "Choose your sensors",
     "category": "sensor",
     "products": [6, 7],
-    "iconSrc": "/public/images/icons/sensors icon.png"
+    "iconSrc": "/public/images/icons/sensors icon.webp"
   },
   {
     "id": 4,
     "title": "Add extra protection",
     "category": "accessory",
     "products": [8],
-    "iconSrc": "/public/images/icons/accessories.png"
+    "iconSrc": "/public/images/icons/accessories.webp"
   }
 ]
