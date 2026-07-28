@@ -22,8 +22,12 @@ const ProdcutCard = ({ product }) => {
 
   return (
     <div
-      className="w-[360px] max-w-[360px] min-w-[220px] min-h-44  flex gap-3  bg-white  rounded-2xl p-1.5 cursor-pointer  border-2  border-white transition-all duration-300 ease-out  hover:border-[#4E2FD2]
-    max-[1440px]:flex-col max-[1440px]:flex-1 max-[1440px]:flex-wrap"
+      className={`w-[360px] max-w-[360px] min-w-[200px] min-h-44  flex gap-2  bg-white  rounded-2xl p-1.5 cursor-pointer  border-2  border-white transition-all duration-300 ease-out  hover:border-[#4E2FD2]
+    max-[1440px]:flex-col max-[1440px]:flex-1 max-[1440px]:flex-wrap max-[1440px]:max-w-[225px]
+
+    ${product.variants.length ? "" : " gap-8"}
+
+    `}
     >
       <div className="relative p-1.5 rounded-2xl">
         {product.compareAtPrice === null || product.price === 0 ? (
@@ -42,8 +46,8 @@ const ProdcutCard = ({ product }) => {
         <h2>
           {product.name} {product.isRequired ? "(Required)" : ""}
         </h2>
-        <p className="text-xs text-gray-400">
-          {product.description} <br />{" "}
+        <p className="text-[14px] text-gray-400">
+          {product.description}{" "}
           <span className="text-blue-700 cursor-pointer underline">
             Learn More
           </span>{" "}

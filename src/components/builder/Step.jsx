@@ -28,7 +28,7 @@ const Step = ({ step, steps, activeStep, setActiveStep }) => {
 
   return (
     <div
-      className={`flex flex-col gap-4 cursor-pointer ${open === true ? "bg-[#EDF4FF]" : ""} px-8 pb-4 rounded-lg  `}
+      className={`flex flex-col gap-4 cursor-pointer ${open === true ? "bg-[#EDF4FF]" : ""} px-8 max-[1440px]:px-4 pb-4 rounded-lg  `}
     >
       <StepHeader
         step={step}
@@ -41,7 +41,7 @@ const Step = ({ step, steps, activeStep, setActiveStep }) => {
       <div
         className={`flex flex-col gap-4 transition-all duration-500 ease-in-out overflow-hidden ${open ? "max-h-[1500px]" : "max-h-0"} `}
       >
-        <div className=" flex flex-wrap gap-4 justify-center ">
+        <div className=" flex flex-wrap gap-1.5 justify-center ">
           {/* pass products data */}
           {products
             .filter((product) => {
