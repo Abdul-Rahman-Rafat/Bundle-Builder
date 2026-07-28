@@ -1,13 +1,20 @@
 import React from "react";
 import ReviewItem from "./ReviewItem";
 
-const CategoryItems = () => {
+const CategoryItems = ({ title, items, onIncrement, onDecrement }) => {
+  if (!items.length) return null;
+
   return (
     <div className="pb-2.5 border-t border-t-gray-300">
-      {/* pass steps data title */}
-      <p className="text-gray-300">Cameras</p>
-      <ReviewItem/>
-      <ReviewItem/>
+      <p className="text-gray-300">{title}</p>
+      {items.map((item) => (
+        <ReviewItem
+          key={`${item.product.id}-${item.variantId}`}
+          item={item}
+          onIncrement={() => onIncrement(item)}
+          onDecrement={() => onDecrement(item)}
+        />
+      ))}
     </div>
   );
 };

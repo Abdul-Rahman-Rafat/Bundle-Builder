@@ -1,21 +1,31 @@
 import React from "react";
 import Quantity from "../builder/Quantity";
 
-function ReviewItem() {
+function ReviewItem({ item, onIncrement, onDecrement }) {
   return (
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-1.5">
         <img
-          src="/public/images/Wyze_Cam v4/Wyze Cam v4 selection(white).png"
+          className={`${item.variant ? "" : "w-6"}`}
+          src={item.variant?.image || item.product.image}
           alt="Wyze Cam v4"
         />
-        <p>Wyze Cam v4</p>
+        <p className="text-sm">{item.product.name}</p>
+        {item.variant ? (
+          <p className="text-gray-500 text-xs">{item.variant.colorName}</p>
+        ) : null}
       </div>
       <div className="flex items-center gap-3.5">
-        <Quantity />
-        <div className=" flex flex-col items-end text-sm ">
-          <span className="line-through text-[#6F7882]">$35.98 </span>
-          <span className="text-[#4E2FD2]">$27.98</span>
+        <Quantity quantity={item.qty} onInc={onIncrement} onDec={onDecrement} />
+        <div className="flex flex-col items-end text-sm">
+          {item.product.compareAtPrice ? (
+            <span className="line-through text-[#6F7882]">
+              ${(item.product.compareAtPrice * item.qty).toFixed(2)}
+            </span>
+          ) : null}
+          <span className="text-[#4E2FD2]">
+            ${(item.product.price * item.qty).toFixed(2)}
+          </span>
         </div>
       </div>
     </div>

@@ -2,14 +2,14 @@ import React from "react";
 import CheckoutButton from "./CheckoutButton";
 import SaveForLaterLink from "./SaveForLaterLink";
 
-const Summery = () => {
+const Summery = ({ subtotal, originalTotal, savings }) => {
   return (
     <div className="flex flex-col gap-2.5">
       <div className="flex justify-between items-center max-[1440px]:flex-col max-[1440px]:gap-4">
         <div className="flex items-center gap-6">
           <img
             className="w-[78px] max-[1440px]:w-[130px]"
-            src="/public/images/Satisfaction Badge-05 1.png"
+            src="/public/images/Satisfaction Badge-05 1.webp"
             alt="Satisfaction Badge"
           />
           <div className="hidden max-[1440px]:block max-[430px]:hidden  ">
@@ -25,14 +25,18 @@ const Summery = () => {
             as low as $19.19/mo
           </p>
           <div className="flex items-center gap-1.5">
-            <span className="text-lg line-through text-[#6F7882]">$238.81</span>
-            <span className="text-2xl text-[#4E2FD2]">$187.89</span>
+            <span className="text-lg line-through text-[#6F7882]">
+              {" "}
+              ${originalTotal}
+            </span>
+            <span className="text-2xl text-[#4E2FD2]"> ${subtotal}</span>
           </div>
         </div>
       </div>
       <div className="flex flex-col">
         <p className="text-[#0AA288] text-sm">
-          Congrats! You’re saving $50.92 on your security bundle!
+          Congrats! You’re saving ${originalTotal - subtotal} on your security
+          bundle!
         </p>
         <CheckoutButton />
       </div>
