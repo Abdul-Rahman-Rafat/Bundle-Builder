@@ -1,24 +1,38 @@
 import { createContext, useState, useEffect } from "react";
 
 export const CartContext = createContext();
+const initialCart = {
+  1: { selectedVariantId: "white", variants: { white: 1 } },
+  2: { selectedVariantId: "white", variants: { white: 2 } },
+  6: { selectedVariantId: "default", variants: { default: 2 } },
+  7: { selectedVariantId: "default", variants: { default: 1 } },
+  8: { selectedVariantId: "default", variants: { default: 2 } },
+  9: { selectedVariantId: "default", variants: { default: 1 } },
+};
 
 export function CartProvider({ children }) {
-  const [cart, setCart] = useState({});
-
-  useEffect(() => {
+  const [cart, setCart] = useState(() => {
     const saved = localStorage.getItem("bundle_cart");
     if (saved) {
       try {
-        setCart(JSON.parse(saved));
+        const parsed = JSON.parse(saved);
+        if (parsed && Object.keys(parsed).length > 0) {
+          return parsed;
+        }
       } catch (error) {
         console.error("Invalid saved cart", error);
       }
     }
-  }, []);
+    return initialCart;
+  });
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   localStorage.setItem("bundle_cart", JSON.stringify(cart));
+  // }, [cart]);
+
+  function saveCart() {
     localStorage.setItem("bundle_cart", JSON.stringify(cart));
-  }, [cart]);
+  }
 
   function setActiveVariant(productId, variantId) {
     setCart((prev) => {
@@ -112,10 +126,16 @@ export function CartProvider({ children }) {
       return next;
     });
   }
-
   return (
     <CartContext.Provider
-      value={{ cart, setActiveVariant, setQuantity, increment, decrement }}
+      value={{
+        cart,
+        setActiveVariant,
+        setQuantity,
+        increment,
+        decrement,
+        saveCart,
+      }}
     >
       {children}
     </CartContext.Provider>
